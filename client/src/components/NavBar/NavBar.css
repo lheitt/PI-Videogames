@@ -1,0 +1,12 @@
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.nav-bar-background {
+    background-color: gainsboro;
+}

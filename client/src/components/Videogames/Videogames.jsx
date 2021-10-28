@@ -1,6 +1,5 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
 import { getVideogames } from "../../actions";
 import Videogame from '../Videogame/Videogame';
 import "./Videogames.css";
@@ -9,7 +8,9 @@ function Videogames() {
     let videogames = useSelector((state) => state.filteredVideogames);
     let dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getVideogames())
+        if(videogames.length === 0) {
+            dispatch(getVideogames())
+        }
         // eslint-disable-next-line 
     }, []);
     
@@ -30,9 +31,6 @@ function Videogames() {
                 }) 
             }
             </div>
-            <Link to="/videogame">
-                <button>Nuevo juego</button>
-            </Link>
         </div>
     )
 };

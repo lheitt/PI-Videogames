@@ -1,4 +1,4 @@
-import { GET_VIDEOGAMES, SEARCH_VIDEOGAMES, GET_VIDEOGAME_DETAIL, SORT } from "../actions"
+import { GET_VIDEOGAMES, SEARCH_VIDEOGAMES, GET_VIDEOGAME_DETAIL, CLEAR_VIDEOGAME_DETAIL, SORT } from "../actions"
 
 const initialState = {
     videogames: [],
@@ -25,15 +25,20 @@ function reducer(state = initialState, action) {
                 ...state,
                 videogameDetail: action.payload
             }
+        case CLEAR_VIDEOGAME_DETAIL:
+            return {
+                ...state,
+                videogameDetail: action.payload
+            }
         case SORT:
             let orderedVideogames = [...state.filteredVideogames];
 
             orderedVideogames = orderedVideogames.sort((a, b) => {
                 if (a.name < b.name) {
-                    return action.payload === "ascendente" ? -1 : 1;
+                    return action.payload === "Nascendente" ? -1 : 1;
                 }
                 if (a.name > b.name) {
-                    return action.payload === "ascendente" ? 1 : -1;
+                    return action.payload === "Nascendente" ? 1 : -1;
                 }
                 return 0;
             })

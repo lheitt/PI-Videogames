@@ -4,9 +4,9 @@ import "./LandingPage.css";
 
 function LandingPage() {
     return (
-        <div>
+        <div className="landing-page">
             <Link to="/videogames">
-                <button>Ingresar</button> 
+                <button className="press-start">PRESS START</button> 
             </Link> 
         </div>
     )
