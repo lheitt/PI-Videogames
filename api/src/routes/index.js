@@ -30,6 +30,7 @@ router.get("/videogames", async (req, res, next) =>{
                     return {
                         id: videogame.id,
                         name: videogame.name,
+                        image: videogame.image,
                         released: videogame.released,
                         rating: videogame.rating,
                         genres: videogame.genres
@@ -43,6 +44,7 @@ router.get("/videogames", async (req, res, next) =>{
                     return {
                         id: videogame.id,
                         name: videogame.name,
+                        image: videogame.background_image,
                         released: videogame.released,
                         rating: videogame.rating,
                         genres: videogame.genres
@@ -61,6 +63,7 @@ router.get("/videogames", async (req, res, next) =>{
                 videogames.push({
                     id: videogame.id,
                     name: videogame.name,
+                    image: videogame.image,
                     released: videogame.released,
                     rating: videogame.rating,
                     genres: videogame.genres
@@ -73,6 +76,7 @@ router.get("/videogames", async (req, res, next) =>{
                     videogames.push({
                         id: videogame.id,
                         name: videogame.name,
+                        image: videogame.background_image,
                         released: videogame.released,
                         rating: videogame.rating,
                         genres: videogame.genres
@@ -101,6 +105,7 @@ router.get("/videogames/:idVideogame", async(req, res, next) =>{
             const videogameDb = {
                 id: videogameDbPromise.id,
                 name: videogameDbPromise.name,
+                image: videogameDbPromise.image,
                 description: videogameDbPromise.description,
                 released: videogameDbPromise.released,
                 rating: videogameDbPromise.rating,
@@ -113,6 +118,7 @@ router.get("/videogames/:idVideogame", async(req, res, next) =>{
             const videogameApi = {
                 id: videogameApiPromise.data.id,
                 name: videogameApiPromise.data.name,
+                image: videogameApiPromise.data.background_image,
                 description: videogameApiPromise.data.description,
                 released: videogameApiPromise.data.released,
                 rating: videogameApiPromise.data.rating,
@@ -145,9 +151,10 @@ router.get("/genres", async (req, res, next) =>{
 
 router.post("/videogame", async (req, res, next) => {
     try {
-        const {name, description, released, rating, platforms, genres} = req.body;
+        const {name, image, description, released, rating, platforms, genres} = req.body;
         const newGame = await Videogame.create({
             name,
+            image,
             description,
             released,
             rating,

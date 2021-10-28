@@ -1,0 +1,15 @@
+.videogame-card:hover {
+    transform: scale(1.5);
+    transition: all .2s ease-in-out;
+}
+
+.videogame-image {
+    width: 12rem;
+    height: 6rem;
+}
+
+.videogame-genres {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
