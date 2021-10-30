@@ -1,6 +1,16 @@
+.videogame-card {
+    width: 14rem;
+    height: 21rem;
+    transition: .2s ease-in-out;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.2rem;
+    margin: 0.6rem;
+    background-color: gainsboro;
+    }
+
 .videogame-card:hover {
-    transform: scale(1.5);
-    transition: all .2s ease-in-out;
+    transform: scale(1.3);
 }
 
 .videogame-image {

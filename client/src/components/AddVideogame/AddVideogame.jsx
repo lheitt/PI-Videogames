@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./AddVideogame.css";
 
 function AddVideogame() {
+    document.title = "Agregar nuevo juego";
     const [newVideogame, setNewVideogame] = useState({});
 
     function handleChange(e) {

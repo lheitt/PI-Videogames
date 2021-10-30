@@ -5,9 +5,9 @@ import { clearVideogameDetail, getVideogameDetail } from '../../actions';
 import "./VideogameDetail.css";
 
 function VideogameDetail() {
-    let videogameDetail = useSelector((state) => state.videogameDetail);
-    let { idVideogame } = useParams();
-    let dispatch = useDispatch();
+    const videogameDetail = useSelector((state) => state.videogameDetail);
+    const { idVideogame } = useParams();
+    const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getVideogameDetail(idVideogame));
         return function cleanup() {
@@ -17,14 +17,14 @@ function VideogameDetail() {
     }, [idVideogame]);
 
     let key = 1;
-    let key2 = 100;
+    let key2 = 1;
 
     return (
         <div>
             {
                 videogameDetail ?
                 <div>
-                    <h2>{videogameDetail.name}</h2>
+                    <h2>{document.title = videogameDetail.name}</h2>
                     <img className="videogame-detail-image" src={videogameDetail.image} alt={videogameDetail.name + " Cover"}/>
                     <h4>Genero/s:</h4>
                     {
@@ -42,7 +42,8 @@ function VideogameDetail() {
                         )
                     }
                 </div>
-                : <h1>Cargando...</h1>
+                
+                : <h1>{document.title = "Cargando..."}</h1>
             }
         </div>
     )

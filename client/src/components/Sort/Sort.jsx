@@ -12,11 +12,11 @@ function Sort() {
 
     return (
         <select name="select" onChange={handleChange}>
-            <option value="default" hidden>Ordenar por nombre o rating...</option>
-            <option value="Nascendente">Nombre Ascendente</option>
-            <option value="Ndescendente">Nombre Descendente</option>
-            <option value="Rascendente">Rating Ascendente</option>
-            <option value="Rdescendente">Rating Descendente</option>
+            <option value="default" hidden>Ordenar por...</option>
+            <option value="a-z">Nombre Ascendente</option>
+            <option value="z-a">Nombre Descendente</option>
+            <option value="1-9">Rating Ascendente</option>
+            <option value="9-1">Rating Descendente</option>
         </select>
     )
 };

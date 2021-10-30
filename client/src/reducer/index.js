@@ -1,10 +1,19 @@
-import { GET_VIDEOGAMES, SEARCH_VIDEOGAMES, GET_VIDEOGAME_DETAIL, CLEAR_VIDEOGAME_DETAIL, SORT } from "../actions"
+import { 
+    GET_VIDEOGAMES, 
+    SEARCH_VIDEOGAMES, 
+    GET_VIDEOGAME_DETAIL, 
+    CLEAR_VIDEOGAME_DETAIL, 
+    GET_GENRES, 
+    SORT, 
+    FILTER 
+} from "../actions"
 
 const initialState = {
     videogames: [],
-    filteredVideogames: [],
-    genres: [],
-    videogameDetail: undefined
+    renderedVideogames: [],
+    searchedVideogames: [], // <------------------ por los filters
+    videogameDetail: undefined,
+    genres: []
 };
 
 function reducer(state = initialState, action) {
@@ -13,12 +22,12 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 videogames: action.payload,
-                filteredVideogames: action.payload
+                renderedVideogames: action.payload
             }
         case SEARCH_VIDEOGAMES:
             return {
                 ...state,
-                filteredVideogames: action.payload
+                renderedVideogames: action.payload
             }
         case GET_VIDEOGAME_DETAIL:
             return {
@@ -30,22 +39,48 @@ function reducer(state = initialState, action) {
                 ...state,
                 videogameDetail: action.payload
             }
+        case GET_GENRES:
+            return {
+                ...state,
+                genres: action.payload
+            }
         case SORT:
-            let orderedVideogames = [...state.filteredVideogames];
-
-            orderedVideogames = orderedVideogames.sort((a, b) => {
-                if (a.name < b.name) {
-                    return action.payload === "Nascendente" ? -1 : 1;
-                }
-                if (a.name > b.name) {
-                    return action.payload === "Nascendente" ? 1 : -1;
-                }
-                return 0;
-            })
+            let orderedVideogames = [...state.renderedVideogames];
+            if(action.payload === "a-z" || action.payload === "z-a") {
+                orderedVideogames = orderedVideogames.sort((a, b) => {
+                    if (a.name > b.name) {
+                        return 1
+                    }
+                    if (a.name < b.name) {
+                        return -1
+                    }
+                    return 0;
+                })
+                if(action.payload === "z-a") orderedVideogames = orderedVideogames.reverse();
+            } else {
+                orderedVideogames = orderedVideogames.sort((a, b) => {
+                    return a.rating - b.rating
+                })
+                if(action.payload === "9-1") orderedVideogames = orderedVideogames.reverse();
+            }
 
             return {
                 ...state,
-                filteredVideogames: orderedVideogames
+                renderedVideogames: orderedVideogames
+            }
+        case FILTER:
+            let filteredVideogames = [];
+            for(let i = 0; i < state.videogames.length; i++) {
+                for(let j = 0; j < state.videogames[i].genres.length; j++) {
+                    if(state.videogames[i].genres[j].name === action.payload) {
+                        filteredVideogames.push(state.videogames[i])
+                    }
+                }    
+            }
+            
+            return {
+                ...state,
+                renderedVideogames: filteredVideogames
             }
         default:
             return state

@@ -6,9 +6,10 @@ import SearchBar from './components/SearchBar/SearchBar';
 import Sort from './components/Sort/Sort';
 import Filter from './components/Filter/Filter';
 import Videogames from './components/Videogames/Videogames';
-import Pages from './components/Pages/Pages';
+import Pagination from './components/Pagination/Pagination';
 import VideogameDetail from './components/VideogameDetail/VideogameDetail';
 import AddVideogame from './components/AddVideogame/AddVideogame';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Sort />
           <Filter />
           <Videogames />
-          <Pages />
+          <Pagination />
         </Route>
         <Route exact path="/videogames/:idVideogame">
           <NavBar />
@@ -32,6 +33,10 @@ function App() {
         <Route exact path="/videogame">
           <NavBar />
           <AddVideogame/>
+        </Route>
+        <Route exact path="/about">
+          <NavBar />
+          <About/>
         </Route>
       </Switch>
     </div>

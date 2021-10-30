@@ -5,8 +5,9 @@ import Videogame from '../Videogame/Videogame';
 import "./Videogames.css";
 
 function Videogames() {
-    let videogames = useSelector((state) => state.filteredVideogames);
-    let dispatch = useDispatch();
+    document.title = "Página principal";
+    const videogames = useSelector((state) => state.renderedVideogames);
+    const dispatch = useDispatch();
     useEffect(() => {
         if(videogames.length === 0) {
             dispatch(getVideogames())

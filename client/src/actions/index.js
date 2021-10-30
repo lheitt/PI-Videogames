@@ -3,7 +3,10 @@ export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
 export const SEARCH_VIDEOGAMES = "SEARCH_VIDEOGAMES";
 export const GET_VIDEOGAME_DETAIL = "GET_VIDEOGAME_DETAIL";
 export const CLEAR_VIDEOGAME_DETAIL = "CLEAR_VIDEOGAME_DETAIL";
+export const GET_GENRES = "GET_GENRES";
 export const SORT = "SORT";
+export const FILTER = "FILTER";
+
 
 export function getVideogames() {
     return function(dispatch) {
@@ -54,9 +57,31 @@ export function clearVideogameDetail() {
     }
 };
 
+export function getGenres() {
+    return function(dispatch) {
+        axios.get("http://localhost:3001/genres")
+        .then((genres) => {
+            dispatch({
+                type: GET_GENRES,
+                payload : genres.data
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+};
+
 export function sort(order) {
     return {
         type: SORT,
         payload: order
+    }
+};
+
+export function filter(filter) {
+    return {
+        type: FILTER,
+        payload: filter
     }
 };

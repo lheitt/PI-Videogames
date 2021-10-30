@@ -12,8 +12,9 @@ function NavBar() {
                 <Link to="/videogame">
                     <p>Nuevo juego</p>
                 </Link>
-                <p>Juegos API</p>
-                <p>Juegos agregados</p>
+                <Link to="/about">
+                    <p>Acerca de</p>
+                </Link>
             </div>
         </div>
     )
