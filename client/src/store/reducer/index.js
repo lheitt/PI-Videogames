@@ -16,8 +16,7 @@ const initialState = {
     videogameDetail: undefined,
     genres: [],
     platforms: [],
-    filter: undefined,
-    thereIsANewGame: 0
+    filter: undefined
 };
 
 function reducer(state = initialState, action) {

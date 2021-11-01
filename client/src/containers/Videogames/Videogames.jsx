@@ -1,25 +1,27 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getVideogames } from "../../actions";
-import Videogame from '../Videogame/Videogame';
+import { getVideogames } from "../../store/actions";
+import Videogame from '../../components/Videogame/Videogame';
 import "./Videogames.css";
 
 function Videogames() {
     document.title = "Home - Videogames";
-    const videogames = useSelector((state) => state.renderedVideogames);
+    const allVideogames = useSelector((state) => state.renderedVideogames);
     const dispatch = useDispatch();
     useEffect(() => {
-        if(videogames.length === 0) {
+        if(allVideogames.length === 0) {
             dispatch(getVideogames());
         }
         // eslint-disable-next-line 
     }, []);
+
+    const videogames = allVideogames.slice(0,15);
     
     return (
         <div>
             <div className="videogames">
             {   
-                videogames.length === 0 ?
+                allVideogames.length === 0 ?
                 <h1>Loading...</h1> :
                 videogames.map((videogame) => {
                     return <Videogame 

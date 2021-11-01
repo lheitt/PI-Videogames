@@ -9,4 +9,9 @@
 
 .nav-bar-background {
     background-color: gainsboro;
+    border-style: solid;
+    border-top: black;
+    border-right: black;
+    border-left: black;
+    border-width: .2rem;
 }

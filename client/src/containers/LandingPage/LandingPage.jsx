@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getVideogames, getGenres, getPlatforms } from '../../actions';
+import { getVideogames, getGenres, getPlatforms } from '../../store/actions';
 import "./LandingPage.css";
 
 function LandingPage() {

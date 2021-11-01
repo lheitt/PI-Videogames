@@ -1,6 +1,6 @@
 import { useState, React } from 'react';
 import { useDispatch } from 'react-redux';
-import { searchVideogame } from '../../actions';
+import { searchVideogame } from '../../store/actions';
 import "./SearchBar.css";
 
 function SearchBar() {

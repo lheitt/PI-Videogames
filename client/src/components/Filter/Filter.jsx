@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getGenres, filter } from '../../actions';
+import { getGenres, filter } from '../../store/actions';
 import "./Filter.css";
 
 function Filter() {

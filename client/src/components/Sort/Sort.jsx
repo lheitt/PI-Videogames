@@ -1,6 +1,6 @@
 import { React, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { sort } from '../../actions';
+import { sort } from '../../store/actions';
 import "./Sort.css";
 
 function Sort() {
@@ -19,10 +19,12 @@ function Sort() {
     return (
         <select ref={order} name="order" onChange={handleChange}>
             <option value="default" hidden>Order by...</option>
-            <option value="a-z">Name A-Z</option>
-            <option value="z-a">Name Z-A</option>
-            <option value="1-9">Rating 0-5</option>
-            <option value="9-1">Rating 5-0</option>
+            <option value="Name" disabled>Name</option>
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+            <option value="Rating" disabled>Rating</option>
+            <option value="1-9">0-5</option>
+            <option value="9-1">5-0</option>
         </select>
     )
 };

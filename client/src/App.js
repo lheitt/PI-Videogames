@@ -1,15 +1,15 @@
 import './App.css';
 import { Route, Switch } from 'react-router';
-import LandingPage from './components/LandingPage/LandingPage';
+import LandingPage from './containers/LandingPage/LandingPage';
 import NavBar from './components/NavBar/NavBar';
 import SearchBar from './components/SearchBar/SearchBar';
 import Sort from './components/Sort/Sort';
 import Filter from './components/Filter/Filter';
-import Videogames from './components/Videogames/Videogames';
+import Videogames from './containers/Videogames/Videogames';
 import Pagination from './components/Pagination/Pagination';
-import VideogameDetail from './components/VideogameDetail/VideogameDetail';
-import AddVideogame from './components/AddVideogame/AddVideogame';
-import About from './components/About/About';
+import VideogameDetail from './containers/VideogameDetail/VideogameDetail';
+import AddVideogame from './containers/AddVideogame/AddVideogame';
+import About from './containers/About/About';
 
 function App() {
   return (

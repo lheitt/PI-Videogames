@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 // import { useHistory } from "react-router";
 import { useDispatch, useSelector } from 'react-redux';
-import { getGenres, getPlatforms, postVideogame } from '../../actions';
+import { getGenres, getPlatforms, postVideogame } from '../../store/actions';
 import "./AddVideogame.css";
 
 function AddVideogame() {

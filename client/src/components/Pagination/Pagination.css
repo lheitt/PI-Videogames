@@ -1,8 +1,14 @@
 .pagination-background {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: gainsboro;
     height: 3rem;
     justify-content: space-evenly;
+    border-style: solid;
+    border-bottom: black;
+    border-right: black;
+    border-left: black;
+    border-width: .2rem;
 }

@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { clearVideogameDetail, getVideogameDetail } from '../../actions';
+import { clearVideogameDetail, getVideogameDetail } from '../../store/actions';
 import "./VideogameDetail.css";
 
 function VideogameDetail() {
