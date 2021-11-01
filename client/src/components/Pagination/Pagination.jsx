@@ -4,7 +4,7 @@ import "./Pagination.css";
 function Pagination() {
     return (
         <div className="pagination-background">
-            Soy pagination
+            I'm pagination
         </div>
     )
 };

@@ -23,7 +23,6 @@ router.get("/videogames", async (req, res, next) =>{
                     }
                 },
                 include: Genre,
-                limit: 15
             });
             if(videogameDbPromise.length > 0) {
                 videogamesDb = videogameDbPromise.map((videogame) => {
@@ -84,7 +83,7 @@ router.get("/videogames", async (req, res, next) =>{
                 });
                 apiAllGames = videogamesApi.next;
             }
-            console.log(videogames.length, "videogames")
+            // console.log(videogames.length, "videogames")
             res.send(videogames);
         }
     } catch(error) {
@@ -144,6 +143,18 @@ router.get("/genres", async (req, res, next) =>{
         })
         const genresDb = await Genre.findAll();
         res.send(genresDb);      
+    } catch(error) {
+        next(error)
+    }
+});
+
+router.get("/platforms", async (req, res, next) =>{
+    try {
+        const platformsApi = await axios.get(`https://api.rawg.io/api/platforms?key=${API_KEY}`);
+        const platforms = platformsApi.data.results.map((genre) => 
+            genre.name
+        )
+        res.send(platforms);      
     } catch(error) {
         next(error)
     }

@@ -4,7 +4,7 @@ import "./About.css"
 function About() {
     return (
         <div>
-            Soy about
+            I'm about
         </div>
     )
 };

@@ -26,16 +26,16 @@ function VideogameDetail() {
                 <div>
                     <h2>{document.title = videogameDetail.name}</h2>
                     <img className="videogame-detail-image" src={videogameDetail.image} alt={videogameDetail.name + " Cover"}/>
-                    <h4>Genero/s:</h4>
+                    <h4>Genre/s:</h4>
                     {
                         videogameDetail.genres.map((genre) => 
                             <span key={key++}>{genre.name + " | "}</span>
                         )
                     }
                     <p>{videogameDetail.description.replace(/<[^>]+>/g,"")}</p>
-                    <p>Fecha de lanzamiento: {videogameDetail.released}</p>
+                    <p>Released: {videogameDetail.released}</p>
                     <p>Rating: {videogameDetail.rating}</p>
-                    <h4>Plataforma/s:</h4>
+                    <h4>Platform/s:</h4>
                     {
                         videogameDetail.platforms.map((platform) => 
                             <span key2={key2++}>{platform.platform ? platform.platform.name + " | " : platform + " | "}</span>
@@ -43,7 +43,7 @@ function VideogameDetail() {
                     }
                 </div>
                 
-                : <h1>{document.title = "Cargando..."}</h1>
+                : <h1>{document.title = "Loading..."}</h1>
             }
         </div>
     )

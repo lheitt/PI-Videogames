@@ -17,8 +17,8 @@ function SearchBar() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" onChange={handleChange} value={search}/>
-            <input type="submit" value="Buscar" />
+            <input type="text" autoCorrect="off" onChange={handleChange} value={search}/>
+            <input type="submit" value="Search" />
         </form>
     )
 };

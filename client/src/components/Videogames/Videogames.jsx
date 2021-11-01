@@ -5,12 +5,12 @@ import Videogame from '../Videogame/Videogame';
 import "./Videogames.css";
 
 function Videogames() {
-    document.title = "Página principal";
+    document.title = "Home - Videogames";
     const videogames = useSelector((state) => state.renderedVideogames);
     const dispatch = useDispatch();
     useEffect(() => {
         if(videogames.length === 0) {
-            dispatch(getVideogames())
+            dispatch(getVideogames());
         }
         // eslint-disable-next-line 
     }, []);
@@ -20,7 +20,7 @@ function Videogames() {
             <div className="videogames">
             {   
                 videogames.length === 0 ?
-                <h1>Cargando...</h1> :
+                <h1>Loading...</h1> :
                 videogames.map((videogame) => {
                     return <Videogame 
                         key={videogame.id} 

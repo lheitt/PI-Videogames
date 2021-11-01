@@ -7,7 +7,9 @@ function Filter() {
     const genres = useSelector((state) => state.genres);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getGenres())
+        if(genres.length === 0) {
+            dispatch(getGenres())
+        }
         // eslint-disable-next-line 
     }, []);
 
@@ -18,13 +20,19 @@ function Filter() {
     let key = 1;
 
     return (
-        <select name="select" onChange={handleChange}>
-            <option value="default" hidden>Filtrar por...</option>
+        <select name="filter" onChange={handleChange}>
+            <option value="default" hidden>Filter by...</option>
+            <option value="genres" disabled>Genre</option>
+            <option value="all">All Genres</option>
             {
                 genres.map((genre) => 
                     <option key={key++} value={genre.name}>{genre.name}</option>
                 )
             }
+            <option value="sources" disabled>Source</option>
+            <option value="both">Database and API</option>
+            <option value="db">Database</option>
+            <option value="api">API</option>
         </select>
     )
 };

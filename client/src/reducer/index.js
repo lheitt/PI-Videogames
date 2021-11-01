@@ -4,16 +4,20 @@ import {
     GET_VIDEOGAME_DETAIL, 
     CLEAR_VIDEOGAME_DETAIL, 
     GET_GENRES, 
+    GET_PLATFORMS,
     SORT, 
-    FILTER 
+    FILTER,
+    POST_VIDEOGAME
 } from "../actions"
 
 const initialState = {
     videogames: [],
     renderedVideogames: [],
-    searchedVideogames: [], // <------------------ por los filters
     videogameDetail: undefined,
-    genres: []
+    genres: [],
+    platforms: [],
+    filter: undefined,
+    thereIsANewGame: 0
 };
 
 function reducer(state = initialState, action) {
@@ -27,7 +31,8 @@ function reducer(state = initialState, action) {
         case SEARCH_VIDEOGAMES:
             return {
                 ...state,
-                renderedVideogames: action.payload
+                renderedVideogames: action.payload,
+                videogames: action.payload
             }
         case GET_VIDEOGAME_DETAIL:
             return {
@@ -43,6 +48,11 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 genres: action.payload
+            }
+        case GET_PLATFORMS:
+            return {
+                ...state,
+                platforms: action.payload
             }
         case SORT:
             let orderedVideogames = [...state.renderedVideogames];
@@ -69,19 +79,43 @@ function reducer(state = initialState, action) {
                 renderedVideogames: orderedVideogames
             }
         case FILTER:
-            let filteredVideogames = [];
-            for(let i = 0; i < state.videogames.length; i++) {
-                for(let j = 0; j < state.videogames[i].genres.length; j++) {
-                    if(state.videogames[i].genres[j].name === action.payload) {
-                        filteredVideogames.push(state.videogames[i])
-                    }
-                }    
+            if(action.payload === "all" || action.payload === "both") {
+                return {
+                    ...state,
+                    renderedVideogames: state.videogames,
+                    filter: action.payload
+                }
+            } else if(action.payload === "api" || action.payload === "db") {
+                let filteredVideogames = [];
+                if(action.payload === "api") {
+                    filteredVideogames = state.videogames.filter((videogame) => typeof videogame.id === "number")
+                } else {
+                    filteredVideogames = state.videogames.filter((videogame) => videogame.id.length > 8)
+                }
+
+                return {
+                    ...state,
+                    renderedVideogames: filteredVideogames,
+                    filter: action.payload
+                }
+            } else {
+                let filteredVideogames = [];
+                for(let i = 0; i < state.videogames.length; i++) {
+                    for(let j = 0; j < state.videogames[i].genres.length; j++) {
+                        if(state.videogames[i].genres[j].name === action.payload) {
+                            filteredVideogames.push(state.videogames[i])
+                        }
+                    }    
+                }
+                
+                return {
+                    ...state,
+                    renderedVideogames: filteredVideogames,
+                    filter: action.payload
+                }
             }
-            
-            return {
-                ...state,
-                renderedVideogames: filteredVideogames
-            }
+        case POST_VIDEOGAME:
+            return state
         default:
             return state
     }
