@@ -4,8 +4,8 @@ import { getGenres, filter } from '../../store/actions';
 import "./Filter.css";
 
 function Filter() {
-    const genres = useSelector((state) => state.genres);
     const dispatch = useDispatch();
+    const genres = useSelector((state) => state.genres);
     useEffect(() => {
         if(genres.length === 0) {
             dispatch(getGenres())

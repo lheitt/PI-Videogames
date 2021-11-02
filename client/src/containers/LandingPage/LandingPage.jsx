@@ -5,14 +5,13 @@ import { getVideogames, getGenres, getPlatforms } from '../../store/actions';
 import "./LandingPage.css";
 
 function LandingPage() {
-    const videogames = useSelector((state) => state.videogames);
     const dispatch = useDispatch();
+    const videogames = useSelector((state) => state.videogames);
     useEffect(() => {
         dispatch(getGenres());
         dispatch(getPlatforms());
-        dispatch(getVideogames());
-        // eslint-disable-next-line 
-    }, [])
+        dispatch(getVideogames()); 
+    }, [dispatch])
 
     return (
         <div className="landing-page">

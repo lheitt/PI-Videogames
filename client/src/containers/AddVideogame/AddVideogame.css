@@ -6,3 +6,23 @@
     flex-wrap: wrap;
     align-items: center;
 }
+
+.genres {
+    display: flex;
+    height: 10rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.platforms {
+    display: flex;
+    height: 10rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}

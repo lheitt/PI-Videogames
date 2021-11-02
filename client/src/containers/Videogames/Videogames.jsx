@@ -7,10 +7,10 @@ import "./Videogames.css";
 
 function Videogames() {
     document.title = "Home - Videogames";
+    const dispatch = useDispatch();
     const allVideogames = useSelector((state) => state.renderedVideogames);
     const [currentPage, setCurrentPage] = useState(1);
     const [videogamesPerPage] = useState(15)
-    const dispatch = useDispatch();
     useEffect(() => {
         if(allVideogames.length === 0) {
             dispatch(getVideogames());

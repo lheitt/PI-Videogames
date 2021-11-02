@@ -6,6 +6,8 @@ import "./AddVideogame.css";
 
 function AddVideogame() {
     document.title = "Add new game";
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [newVideogame, setNewVideogame] = useState({
         name: "",
         image: "",
@@ -17,8 +19,6 @@ function AddVideogame() {
     });
     const genres = useSelector(state => state.genres);
     const platforms = useSelector(state => state.platforms);
-    const dispatch = useDispatch();
-    const history = useHistory();
     useEffect(() => {
         if(genres.length === 0 || platforms.length === 0){
             dispatch(getGenres());
@@ -94,28 +94,37 @@ function AddVideogame() {
                 <input name="released" type="date" required value={newVideogame.released} onChange={handleChange}/>
                 <label htmlFor="rating">* Rating: </label>
                 <input name="rating" type="number" placeholder="0-5" step="0.01" min="0" max="5" required value={newVideogame.rating} onChange={handleChange}/>
-                <label>* Genre/s: </label>
-                <div>
-                    {
-                        genres.map((genre) =>
-                        <div key={key2++}>
-                            <label>{genre.name}</label>
-                            <input type="checkbox" value={genre.name} onClick={handleSelection} name="genres"/>
+                
+                <div className="genres-platforms">
+                    <div>
+                        <label>* Genre/s: </label>
+                        <div className="genres">
+                            {
+                                genres.map((genre) =>
+                                <div key={key2++}>
+                                    <label>{genre.name}</label>
+                                    <input type="checkbox" value={genre.name} onClick={handleSelection} name="genres"/>
+                                </div>
+                                )
+                            }
                         </div>
-                        )
-                    }
+                    </div>
+                    
+                    <div>
+                        <label>* Platform/s: </label>
+                        <div className="platforms">
+                            {  
+                                platforms.map((platform) =>
+                                    <div key={key++}>
+                                        <label>{platform}</label>
+                                        <input type="checkbox" value={platform} onClick={handleSelection} name="platforms"/>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
                 </div>
-                <label>* Platform/s: </label>
-                <div>
-                    {  
-                        platforms.map((platform) =>
-                            <div key={key++}>
-                                <label>{platform}</label>
-                                <input type="checkbox" value={platform} onClick={handleSelection} name="platforms"/>
-                            </div>
-                        )
-                    }
-                </div>
+
                 <input type="submit" />
             </form>
             <h6>* required fields</h6>

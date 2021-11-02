@@ -4,13 +4,13 @@ import { sort } from '../../store/actions';
 import "./Sort.css";
 
 function Sort() {
+    const dispatch = useDispatch();
     const filter = useSelector(state => state.filter);
     let order = useRef();
     useEffect(() => {
         let value = order.current;
         value.value = "default";
     }, [filter]) 
-    const dispatch = useDispatch();
 
     function handleChange(e) {
         dispatch(sort(e.target.value));

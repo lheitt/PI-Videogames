@@ -5,9 +5,9 @@ import { clearVideogameDetail, getVideogameDetail } from '../../store/actions';
 import "./VideogameDetail.css";
 
 function VideogameDetail() {
+    const dispatch = useDispatch();
     const videogameDetail = useSelector((state) => state.videogameDetail);
     const { idVideogame } = useParams();
-    const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getVideogameDetail(idVideogame));
         return function cleanup() {

@@ -7,7 +7,7 @@ function Videogame({id, name, image, genres}) {
     return (
         <div className="videogame-card">
             <Link to={`videogames/${id}`}>
-                <h4>{name}</h4>
+                <h4 className="videogame-title">{name}</h4>
                 <img className="videogame-image" src={image} alt={name + " Cover"}/>
             </Link>
                 <div className="videogame-genres">

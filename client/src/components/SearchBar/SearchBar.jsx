@@ -4,8 +4,8 @@ import { searchVideogame } from '../../store/actions';
 import "./SearchBar.css";
 
 function SearchBar() {
+    const dispatch = useDispatch();
     const [search, setSearch] = useState("");
-    let dispatch = useDispatch();
 
     function handleChange(e) {
         setSearch(e.target.value);
