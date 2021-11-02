@@ -1,11 +1,23 @@
 import React from 'react';
 import "./Pagination.css";
 
-function Pagination() {
+function Pagination({ videogamesPerPage, totalVideogames, paginate }) {
+    const pageNumbers = [];
+
+    for(let i = 1; i <= Math.ceil(totalVideogames / videogamesPerPage); i++) {
+        pageNumbers.push(i)
+    }
+
     return (
-        <div className="pagination-background">
-            I'm pagination
-        </div>
+        <nav className="pagination-background">
+            <ul className="pages">
+                {
+                    pageNumbers.map((number) =>
+                        <button key={number} onClick={() => paginate(number)}>{number}</button>
+                    )
+                }
+            </ul>
+        </nav>
     )
 };
 

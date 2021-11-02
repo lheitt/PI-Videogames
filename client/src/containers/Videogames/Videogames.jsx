@@ -1,12 +1,15 @@
-import { React, useEffect } from 'react';
+import { React, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getVideogames } from "../../store/actions";
 import Videogame from '../../components/Videogame/Videogame';
+import Pagination from '../../components/Pagination/Pagination';
 import "./Videogames.css";
 
 function Videogames() {
     document.title = "Home - Videogames";
     const allVideogames = useSelector((state) => state.renderedVideogames);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [videogamesPerPage] = useState(15)
     const dispatch = useDispatch();
     useEffect(() => {
         if(allVideogames.length === 0) {
@@ -15,25 +18,52 @@ function Videogames() {
         // eslint-disable-next-line 
     }, []);
 
-    const videogames = allVideogames.slice(0,15);
+    const indexOfLastVideogame = currentPage * videogamesPerPage;
+    const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage;
+    const videogames = allVideogames.slice(indexOfFirstVideogame, indexOfLastVideogame);
+
+    function paginate(pageNumber) {
+        setCurrentPage(pageNumber);
+        window.scroll({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
     
     return (
         <div>
-            <div className="videogames">
             {   
                 allVideogames.length === 0 ?
                 <h1>Loading...</h1> :
-                videogames.map((videogame) => {
-                    return <Videogame 
-                        key={videogame.id} 
-                        id={videogame.id} 
-                        name={videogame.name} 
-                        image={videogame.image} 
-                        genres={videogame.genres}
-                    /> 
-                }) 
+                <div>
+                    <div className="videogames">
+                        {
+                            videogames.map((videogame) => {
+                                return <Videogame 
+                                    key={videogame.id} 
+                                    id={videogame.id} 
+                                    name={videogame.name} 
+                                    image={videogame.image} 
+                                    genres={videogame.genres}
+                                /> 
+                            })
+                        }
+                    </div> 
+                    <div>
+                        {
+                            allVideogames.length > 15 ?
+                            <Pagination 
+                                videogamesPerPage={videogamesPerPage} 
+                                totalVideogames={allVideogames.length} 
+                                paginate={paginate}
+                            /> :
+                            <h1> </h1>
+                        }
+                        
+                    </div>
+
+                </div>
             }
-            </div>
         </div>
     )
 };

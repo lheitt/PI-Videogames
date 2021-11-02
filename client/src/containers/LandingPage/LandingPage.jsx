@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getVideogames, getGenres, getPlatforms } from '../../store/actions';
@@ -7,9 +7,12 @@ import "./LandingPage.css";
 function LandingPage() {
     const videogames = useSelector((state) => state.videogames);
     const dispatch = useDispatch();
-    dispatch(getGenres());
-    dispatch(getPlatforms());
-    dispatch(getVideogames());
+    useEffect(() => {
+        dispatch(getGenres());
+        dispatch(getPlatforms());
+        dispatch(getVideogames());
+        // eslint-disable-next-line 
+    }, [])
 
     return (
         <div className="landing-page">

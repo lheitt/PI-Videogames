@@ -6,7 +6,6 @@ import SearchBar from './components/SearchBar/SearchBar';
 import Sort from './components/Sort/Sort';
 import Filter from './components/Filter/Filter';
 import Videogames from './containers/Videogames/Videogames';
-import Pagination from './components/Pagination/Pagination';
 import VideogameDetail from './containers/VideogameDetail/VideogameDetail';
 import AddVideogame from './containers/AddVideogame/AddVideogame';
 import About from './containers/About/About';
@@ -24,7 +23,6 @@ function App() {
           <Sort />
           <Filter />
           <Videogames />
-          <Pagination />
         </Route>
         <Route exact path="/videogames/:idVideogame">
           <NavBar />

@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-// import { useHistory } from "react-router";
+import { useHistory } from "react-router";
 import { useDispatch, useSelector } from 'react-redux';
 import { getGenres, getPlatforms, postVideogame } from '../../store/actions';
 import "./AddVideogame.css";
@@ -18,7 +18,7 @@ function AddVideogame() {
     const genres = useSelector(state => state.genres);
     const platforms = useSelector(state => state.platforms);
     const dispatch = useDispatch();
-    // const history = useHistory();
+    const history = useHistory();
     useEffect(() => {
         if(genres.length === 0 || platforms.length === 0){
             dispatch(getGenres());
@@ -42,7 +42,8 @@ function AddVideogame() {
         if(newVideogame.platforms.length === 0) return alert("Select at least one platform");
         dispatch(postVideogame(newVideogame));
         alert("Your videogame was added to database correctly");
-        // history.push("/videogames");
+        history.push("/videogames");
+        window.location.reload();
     };
     function handleSelection(e) {
         if(e.target.name === "platforms") {
