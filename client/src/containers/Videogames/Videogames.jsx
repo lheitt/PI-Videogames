@@ -56,8 +56,9 @@ function Videogames() {
                                 videogamesPerPage={videogamesPerPage} 
                                 totalVideogames={allVideogames.length} 
                                 paginate={paginate}
+                                currentPage={currentPage}
                             /> :
-                            <h1> </h1>
+                            <h1 style={{display: "none"}}> </h1>
                         }
                         
                     </div>

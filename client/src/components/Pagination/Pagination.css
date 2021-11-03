@@ -1,19 +1,44 @@
 .pagination-background {
+    display: flex;
+    height: 4.5rem;
     background-color: gainsboro;
-    height: 3rem;
-    justify-content: space-evenly;
     border-style: solid;
     border-bottom: black;
     border-right: black;
     border-left: black;
     border-width: .2rem;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .pages {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 18rem;
-    margin-right: 18rem;
+    flex-wrap: nowrap;
+    margin-left: 30rem;
+    margin-right: 30rem;
     justify-content: space-evenly;
+    padding-inline-start: inherit;
+}
+
+.page-button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.current-page-button {
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.page-button:hover, .current-page-button:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1500px) {
+    .pages {
+        margin-left: 15rem;
+        margin-right: 15rem;
+    }
 }

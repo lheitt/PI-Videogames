@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-left: 10rem;
     margin-right: 10rem;
+    font-size: 1.5rem;
 }
 
 .nav-bar-background {
@@ -14,4 +15,14 @@
     border-right: black;
     border-left: black;
     border-width: .2rem;
+}
+
+.nav-bar-link {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color:black;
+}
+
+a {
+    text-decoration: none;
 }

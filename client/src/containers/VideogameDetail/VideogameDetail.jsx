@@ -20,21 +20,21 @@ function VideogameDetail() {
     let key2 = 1;
 
     return (
-        <div>
+        <div className="videogame-detail">
             {
                 videogameDetail ?
                 <div>
                     <h2>{document.title = videogameDetail.name}</h2>
                     <img className="videogame-detail-image" src={videogameDetail.image} alt={videogameDetail.name + " Cover"}/>
+                    <p className="videogame-description">{videogameDetail.description.replace(/<[^>]+>/g,"")}</p>
+                    <p>Released: {videogameDetail.released} &#128198;</p>
+                    <p>Rating: {videogameDetail.rating} &#11088;</p>
                     <h4>Genre/s:</h4>
                     {
                         videogameDetail.genres.map((genre) => 
                             <span key={key++}>{genre.name + " | "}</span>
                         )
                     }
-                    <p>{videogameDetail.description.replace(/<[^>]+>/g,"")}</p>
-                    <p>Released: {videogameDetail.released}</p>
-                    <p>Rating: {videogameDetail.rating}</p>
                     <h4>Platform/s:</h4>
                     {
                         videogameDetail.platforms.map((platform) => 

@@ -17,7 +17,7 @@ function Sort() {
     };
 
     return (
-        <select ref={order} name="order" onChange={handleChange}>
+        <select style={{fontSize: "1.3rem"}} ref={order} name="order" onChange={handleChange}>
             <option value="default" hidden>Order by...</option>
             <option value="Name" disabled>Name</option>
             <option value="a-z">A-Z</option>

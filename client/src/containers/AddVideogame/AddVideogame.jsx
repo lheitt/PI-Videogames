@@ -82,52 +82,60 @@ function AddVideogame() {
     }
 
     return (
-        <div>
-            <form className="add-videogame" onSubmit={handleSubmit}>
+        <div className="add-videogame">
+            <form className="add-videogame-form" onSubmit={handleSubmit}>
+                <div className="inputs-groups">
                 <label htmlFor="name">* Name: </label>
                 <input name="name" type="text" placeholder="Name of game" required value={newVideogame.name} onChange={handleChange}/>
+                </div>
+                <div className="inputs-groups">
                 <label htmlFor="image">* Image URL: </label>
                 <input name="image" type="url" placeholder="http://imagen.jpg" required value={newVideogame.image} onChange={handleChange}/>
+                </div>
+                <div className="inputs-groups">
                 <label htmlFor="description">* Description: </label>
                 <input name="description" type="text" placeholder="Description of game" required value={newVideogame.description} onChange={handleChange}/>
+                </div>
+                <div className="inputs-groups">
                 <label htmlFor="released">* Released: </label>
                 <input name="released" type="date" required value={newVideogame.released} onChange={handleChange}/>
+                </div>
+                <div className="inputs-groups">
                 <label htmlFor="rating">* Rating: </label>
                 <input name="rating" type="number" placeholder="0-5" step="0.01" min="0" max="5" required value={newVideogame.rating} onChange={handleChange}/>
-                
-                <div className="genres-platforms">
-                    <div>
-                        <label>* Genre/s: </label>
-                        <div className="genres">
-                            {
-                                genres.map((genre) =>
-                                <div key={key2++}>
-                                    <label>{genre.name}</label>
-                                    <input type="checkbox" value={genre.name} onClick={handleSelection} name="genres"/>
-                                </div>
-                                )
-                            }
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label>* Platform/s: </label>
-                        <div className="platforms">
-                            {  
-                                platforms.map((platform) =>
-                                    <div key={key++}>
-                                        <label>{platform}</label>
-                                        <input type="checkbox" value={platform} onClick={handleSelection} name="platforms"/>
-                                    </div>
-                                )
-                            }
-                        </div>
-                    </div>
                 </div>
 
-                <input type="submit" />
+                <div className="inputs-groups">
+                    <label>* Genre/s: </label>
+                    <div className="genres">
+                        {
+                            genres.map((genre) =>
+                            <div style={{marginLeft: ".3rem", marginRight: ".3rem"}} key={key2++}>
+                                <label>{genre.name}</label>
+                                <input type="checkbox" value={genre.name} onClick={handleSelection} name="genres"/>
+                            </div>
+                            )
+                        }
+                    </div>
+                </div>
+                
+                <div className="inputs-groups">
+                    <label>* Platform/s: </label>
+                    <div className="platforms">
+                        {  
+                            platforms.map((platform) =>
+                                <div style={{marginLeft: ".3rem", marginRight: ".3rem"}} key={key++}>
+                                    <label>{platform}</label>
+                                    <input type="checkbox" value={platform} onClick={handleSelection} name="platforms"/>
+                                </div>
+                            )
+                        }
+                    </div>
+                </div>
+                
+                <h6>* Required fields</h6>
+                <input style={{margin: "1rem", fontSize: "1.5rem"}} type="submit" value="Add game"/>
             </form>
-            <h6>* required fields</h6>
         </div>
     )
 };

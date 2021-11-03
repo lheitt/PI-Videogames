@@ -7,13 +7,13 @@ function NavBar() {
         <div className="nav-bar-background">
             <div className="nav-bar">
                 <Link to="/videogames">
-                    <p>Home</p>
+                    <p className="nav-bar-link">Home</p>
                 </Link>
                 <Link to="/videogame">
-                    <p>Add game</p>
+                    <p className="nav-bar-link">Add game</p>
                 </Link>
                 <Link to="/about">
-                    <p>About</p>
+                    <p className="nav-bar-link">About</p>
                 </Link>
             </div>
         </div>
