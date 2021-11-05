@@ -16,6 +16,18 @@
     margin-top: 2rem;
 }
 
+@media screen and (max-width: 480px) {
+    .about {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .about {
+        padding: .2rem;
+    }
+}
+
 .about-img {
     border-style: solid;
     border-color: black;
@@ -55,6 +67,7 @@
 
 .about-linked-in:hover {
     transform: scale(1.1);
+    color: #ffc107;
 }
 
 .linked-in-logo {
@@ -69,6 +82,7 @@
 
 .about-github:hover {
     transform: scale(1.1);
+    color: #ffc107;
 }
 
 .github-logo {

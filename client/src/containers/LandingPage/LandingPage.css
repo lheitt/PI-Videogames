@@ -11,14 +11,34 @@ a {
     text-decoration: none;
 }
 
-.loading-text {
+.loading {
     position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -50px;
     margin-left: -100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    filter: drop-shadow(-4px 6px 11px black);
+}
+
+.loading-text {
     color: white;
-    text-shadow: 2px 2px 4px #000000;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #ffc107;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .press-start {
@@ -34,6 +54,8 @@ a {
 
 .press-start:hover {
     transform: scale(1.4);
+    /* border-style: solid; */
+    /* border-color: #ffc107; */
 }
   
 

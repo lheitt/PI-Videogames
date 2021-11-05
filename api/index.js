@@ -24,7 +24,7 @@ const { conn } = require('./src/db.js');
 // const Videogames = require("../api/src/db");
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   // let videogames = [];
   // let apiAllGames = `https://api.rawg.io/api/games?key=${API_KEY}`;
   // for (let i = 0; i < 5; i++) {

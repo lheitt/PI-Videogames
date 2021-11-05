@@ -41,9 +41,12 @@ function VideogameDetail() {
                             <span key2={key2++}>{platform.platform ? platform.platform.name + " | " : platform + " | "}</span>
                         )
                     }
-                </div>
+                </div> : 
                 
-                : <h1>{document.title = "Loading..."}</h1>
+                <div className="videogame-detail-loading">
+                    <h1>{document.title = "Loading..."}</h1>
+                    <div className="spinner"></div>
+                </div>
             }
         </div>
     )

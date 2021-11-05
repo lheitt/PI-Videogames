@@ -17,7 +17,10 @@ function LandingPage() {
         <div className="landing-page">
             {   
                 videogames.length === 0 ?
-                <h1 className="loading-text">Loading...</h1> :
+                <div className="loading">
+                    <h1 className="loading-text">Loading...</h1>
+                    <div className="spinner"></div> 
+                </div> :
                 <Link to="/videogames">
                     <button className="press-start">PRESS START</button> 
                 </Link>  

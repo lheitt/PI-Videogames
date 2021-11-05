@@ -45,7 +45,7 @@
 }
 
 .current-page-button:hover {
-    transform: scale(1.25);
+    transform: scale(1.5);
 }
 
 .page-button:hover, .current-page-button:hover {

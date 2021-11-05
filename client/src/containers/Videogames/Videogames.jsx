@@ -40,7 +40,10 @@ function Videogames() {
             <Filter />
             {   
                 allVideogames.length === 0 ?
-                <h1 className="videogames-loading">Loading...</h1> :
+                <div className="videogames-loading">
+                    <h1 className="videogames-loading">Loading...</h1>
+                    <div className="spinner"></div>
+                </div> :
                 <div>
                     <div className="videogames">
                         {
