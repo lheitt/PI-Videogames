@@ -1,9 +1,14 @@
-.landing-page {
+body {
     background-image: url("../../assets/img/video-game-cover-montage-blur.png");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     height: 100%;
     width: 100%;
+}
+
+a {
+    text-decoration: none;
 }
 
 .loading-text {
@@ -13,6 +18,7 @@
     margin-top: -50px;
     margin-left: -100px;
     color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .press-start {
@@ -23,6 +29,7 @@
     margin-top: -50px;
     margin-left: -100px;
     transition: .5s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .press-start:hover {

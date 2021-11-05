@@ -16,9 +16,9 @@ function SearchBar() {
     }
 
     return (
-        <form style={{margin: ".3rem"}} onSubmit={handleSubmit}>
+        <form className="search-bar" onSubmit={handleSubmit}>
             <input style={{fontSize: "1.5rem"}} type="text" autoCorrect="off" onChange={handleChange} value={search}/>
-            <input style={{fontSize: "1.5rem"}} type="submit" value="Search" />
+            <input className="search-button" type="submit" value="Search" />
         </form>
     )
 };

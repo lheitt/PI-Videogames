@@ -1,7 +1,7 @@
 .pagination-background {
     display: flex;
     height: 4.5rem;
-    background-color: gainsboro;
+    background-color: transparent;
     border-style: solid;
     border-bottom: black;
     border-right: black;
@@ -9,6 +9,7 @@
     border-width: .2rem;
     flex-direction: column;
     justify-content: center;
+    background-color: rgba(34, 34, 34, 0.808);
 }
 
 .pages {
@@ -25,11 +26,26 @@
     background-color: transparent;
     border: none;
     font-size: 1.5rem;
+    transition: .1s ease-in-out;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .current-page-button {
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    transition: .1s ease-in-out;
+    color: #ffc107;
+    text-shadow: 2px 2px 4px #000000;
+    border: none;
+}
+
+.page-button:hover {
+    transform: scale(1.5);
+}
+
+.current-page-button:hover {
+    transform: scale(1.25);
 }
 
 .page-button:hover, .current-page-button:hover {

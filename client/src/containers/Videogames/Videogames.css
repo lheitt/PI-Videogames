@@ -1,6 +1,17 @@
+.videogames-background {
+    background-color: transparent;
+}
+
+.videogames-loading {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
 .videogames {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
 }

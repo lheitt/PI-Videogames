@@ -84,28 +84,30 @@ function AddVideogame() {
     return (
         <div className="add-videogame">
             <form className="add-videogame-form" onSubmit={handleSubmit}>
-                <div className="inputs-groups">
-                <label htmlFor="name">* Name: </label>
-                <input name="name" type="text" placeholder="Name of game" required value={newVideogame.name} onChange={handleChange}/>
-                </div>
-                <div className="inputs-groups">
-                <label htmlFor="image">* Image URL: </label>
-                <input name="image" type="url" placeholder="http://imagen.jpg" required value={newVideogame.image} onChange={handleChange}/>
-                </div>
-                <div className="inputs-groups">
-                <label htmlFor="description">* Description: </label>
-                <input name="description" type="text" placeholder="Description of game" required value={newVideogame.description} onChange={handleChange}/>
-                </div>
-                <div className="inputs-groups">
-                <label htmlFor="released">* Released: </label>
-                <input name="released" type="date" required value={newVideogame.released} onChange={handleChange}/>
-                </div>
-                <div className="inputs-groups">
-                <label htmlFor="rating">* Rating: </label>
-                <input name="rating" type="number" placeholder="0-5" step="0.01" min="0" max="5" required value={newVideogame.rating} onChange={handleChange}/>
+                <div className="inputs-groups-details">
+                    <div className="inputs-groups">
+                    <label htmlFor="name">* Name: </label>
+                    <input name="name" type="text" placeholder="Name of game" required value={newVideogame.name} onChange={handleChange}/>
+                    </div>
+                    <div className="inputs-groups">
+                    <label htmlFor="image">* Image URL: </label>
+                    <input name="image" type="url" placeholder="http://imagen.jpg" required value={newVideogame.image} onChange={handleChange}/>
+                    </div>
+                    <div className="inputs-groups">
+                    <label htmlFor="description">* Description: </label>
+                    <input name="description" type="text" placeholder="Description of game" required value={newVideogame.description} onChange={handleChange}/>
+                    </div>
+                    <div className="inputs-groups">
+                    <label htmlFor="released">* Released: </label>
+                    <input name="released" type="date" required value={newVideogame.released} onChange={handleChange}/>
+                    </div>
+                    <div className="inputs-groups">
+                    <label htmlFor="rating">* Rating: </label>
+                    <input name="rating" type="number" placeholder="0.0 - 5.0" step="0.01" min="0" max="5" required value={newVideogame.rating} onChange={handleChange}/>
+                    </div>
                 </div>
 
-                <div className="inputs-groups">
+                <div className="inputs-groups-genres">
                     <label>* Genre/s: </label>
                     <div className="genres">
                         {
@@ -119,7 +121,7 @@ function AddVideogame() {
                     </div>
                 </div>
                 
-                <div className="inputs-groups">
+                <div className="inputs-groups-platforms">
                     <label>* Platform/s: </label>
                     <div className="platforms">
                         {  
@@ -134,7 +136,7 @@ function AddVideogame() {
                 </div>
                 
                 <h6>* Required fields</h6>
-                <input style={{margin: "1rem", fontSize: "1.5rem"}} type="submit" value="Add game"/>
+                <input className="add-videogame-button" type="submit" value="Add game"/>
             </form>
         </div>
     )

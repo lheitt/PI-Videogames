@@ -1,6 +1,8 @@
 .add-videogame {
     padding-top: 2rem;
     padding-bottom: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .add-videogame-form {
@@ -13,16 +15,46 @@
     font-size: 1.3rem;
 }
 
-.inputs-groups {
+.inputs-groups-details {
+    background-color: rgba(34, 34, 34, 0.808);
+    border-style: solid;
+    border-color: black;
+    border-width: .2rem;
+    border-radius: 1rem;
+}
+
+.inputs-groups, .inputs-groups-genres, .inputs-groups-platforms {
     margin: .6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.inputs-groups-genres {
+    width: -webkit-fill-available;
+    margin-left: 30rem;
+    margin-right: 30rem;
+    background-color: rgba(34, 34, 34, 0.808);
+    border-style: solid;
+    border-color: black;
+    border-width: .2rem;
+    border-radius: 1rem;
+}
+
+.inputs-groups-platforms {
+    width: -webkit-fill-available;
+    margin-left: 18rem;
+    margin-right: 18rem;
+    background-color: rgba(34, 34, 34, 0.808);
+    border-style: solid;
+    border-color: black;
+    border-width: .2rem;
+    border-radius: 1rem;
+}
+
 .genres {
     display: flex;
-    height: 10rem;
+    height: 12rem;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: baseline;
@@ -40,13 +72,79 @@
     align-content: space-around;
 }
 
+.add-videogame-button {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.add-videogame-button:hover {
+    cursor: pointer;
+}
+
 input {
     font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1700px) {
+    .inputs-groups-genres {
+        width: -webkit-fill-available;
+        margin-left: 20rem;
+        margin-right: 20rem;
+        background-color: rgba(34, 34, 34, 0.808);
+    }
+    
+    .inputs-groups-platforms {
+        width: -webkit-fill-available;
+        margin-left: 10rem;
+        margin-right: 10rem;
+        background-color: rgba(34, 34, 34, 0.808);
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .inputs-groups-genres {
+        width: -webkit-fill-available;
+        margin-left: 15rem;
+        margin-right: 15rem;
+        background-color: rgba(34, 34, 34, 0.808);
+    }
+    
+    .inputs-groups-platforms {
+        width: -webkit-fill-available;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        background-color: rgba(34, 34, 34, 0.808);
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .inputs-groups-genres {
+        width: -webkit-fill-available;
+        margin-left: 10rem;
+        margin-right: 10rem;
+        background-color: rgba(34, 34, 34, 0.808);
+    }
+    
+    .inputs-groups-platforms {
+        width: -webkit-fill-available;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        background-color: rgba(34, 34, 34, 0.808);
+    }
 }
 
 @media screen and (max-width: 1100px) {
     .platforms {
         height: 30rem;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .inputs-groups-genres {
+        width: -webkit-fill-available;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        background-color: rgba(34, 34, 34, 0.808);
     }
 }
 
@@ -57,5 +155,15 @@ input {
     
     .platforms {
         height: 50rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .genres {
+        height: 35rem;
+    } 
+    
+    .platforms {
+        height: 80rem;
     }
 }

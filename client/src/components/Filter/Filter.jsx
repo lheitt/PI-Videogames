@@ -20,7 +20,7 @@ function Filter() {
     let key = 1;
 
     return (
-        <select style={{fontSize: "1.3rem"}} name="filter" onChange={handleChange}>
+        <select className="filter" name="filter" onChange={handleChange}>
             <option value="default" hidden>Filter by...</option>
             <option value="genres" disabled>Genre</option>
             <option value="all">All Genres</option>

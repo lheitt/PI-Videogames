@@ -72,14 +72,16 @@ router.get("/videogames", async (req, res, next) =>{
             for (let i = 0; i < 5; i++) {
                 const videogamesApi = (await axios.get(apiAllGames)).data;
                 videogamesApi.results.forEach((videogame) => {
-                    videogames.push({
-                        id: videogame.id,
-                        name: videogame.name,
-                        image: videogame.background_image,
-                        released: videogame.released,
-                        rating: videogame.rating,
-                        genres: videogame.genres
-                    })
+                    if(videogame.name !== "Marvel's Spider-Man"){
+                        videogames.push({
+                            id: videogame.id,
+                            name: videogame.name,
+                            image: videogame.background_image,
+                            released: videogame.released,
+                            rating: videogame.rating,
+                            genres: videogame.genres
+                        })
+                    }
                 });
                 apiAllGames = videogamesApi.next;
             }

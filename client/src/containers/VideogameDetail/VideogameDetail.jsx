@@ -24,9 +24,9 @@ function VideogameDetail() {
             {
                 videogameDetail ?
                 <div>
-                    <h2>{document.title = videogameDetail.name}</h2>
+                    <h2 className="videogame-detail-title">{document.title = videogameDetail.name}</h2>
                     <img className="videogame-detail-image" src={videogameDetail.image} alt={videogameDetail.name + " Cover"}/>
-                    <p className="videogame-description">{videogameDetail.description.replace(/<[^>]+>/g,"")}</p>
+                    <p className="videogame-detail-description">{videogameDetail.description.replace(/<[^>]+>/g,"")}</p>
                     <p>Released: {videogameDetail.released} &#128198;</p>
                     <p>Rating: {videogameDetail.rating} &#11088;</p>
                     <h4>Genre/s:</h4>

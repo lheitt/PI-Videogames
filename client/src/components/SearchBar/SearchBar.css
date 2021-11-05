@@ -1,0 +1,12 @@
+.search-bar {
+    padding: .3rem;
+    
+}
+
+.search-button {
+    font-size: 1.5rem;
+}
+
+.search-button:hover {
+    cursor: pointer;
+}

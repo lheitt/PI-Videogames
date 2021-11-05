@@ -8,12 +8,12 @@ function Videogame({id, name, image, genres}) {
         <div className="videogame-card">
             <Link to={`videogames/${id}`}>
                 <h4 className="videogame-title">{name}</h4>
-                <img className="videogame-image" src={image} alt={name + " Cover"}/>
+                <img className="videogame-cover" src={image} alt={name + " Cover"}/>
             </Link>
                 <div className="videogame-genres">
                     {
                         genres.map((genre) => 
-                            <h6 key={key++}>{genre.name + " | "}</h6>
+                            <h6 style={{margin: "auto"}} key={key++}>{genre.name + " | "}</h6>
                         )
                     }
                 </div>

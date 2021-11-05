@@ -4,6 +4,9 @@ import { getVideogames } from "../../store/actions";
 import Videogame from '../../components/Videogame/Videogame';
 import Pagination from '../../components/Pagination/Pagination';
 import "./Videogames.css";
+import Sort from '../../components/Sort/Sort';
+import Filter from '../../components/Filter/Filter';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 function Videogames() {
     document.title = "Home - Videogames";
@@ -31,10 +34,13 @@ function Videogames() {
     }
     
     return (
-        <div>
+        <div className="videogames-background">
+            <SearchBar />
+            <Sort />
+            <Filter />
             {   
                 allVideogames.length === 0 ?
-                <h1>Loading...</h1> :
+                <h1 className="videogames-loading">Loading...</h1> :
                 <div>
                     <div className="videogames">
                         {
