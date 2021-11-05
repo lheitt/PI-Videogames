@@ -92,6 +92,15 @@ function reducer(state = initialState, action) {
                     filteredVideogames = state.videogames.filter((videogame) => videogame.id.length > 8)
                 }
 
+                if (filteredVideogames.length === 0) {
+                    filteredVideogames = ["No games"]
+                    return {
+                        ...state,
+                        renderedVideogames: filteredVideogames,
+                        filter: action.payload
+                    }
+                }
+
                 return {
                     ...state,
                     renderedVideogames: filteredVideogames,
@@ -105,6 +114,15 @@ function reducer(state = initialState, action) {
                             filteredVideogames.push(state.videogames[i])
                         }
                     }    
+                }
+
+                if (filteredVideogames.length === 0) {
+                    filteredVideogames = ["No games"]
+                    return {
+                        ...state,
+                        renderedVideogames: filteredVideogames,
+                        filter: action.payload
+                    }
                 }
                 
                 return {

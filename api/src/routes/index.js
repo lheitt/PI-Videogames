@@ -51,7 +51,7 @@ router.get("/videogames", async (req, res, next) =>{
                 })
             };
             const videogames = [...videogamesDb, ...videogamesApi];
-            videogames.length === 0? res.json("There is no game with that name") : res.send(videogames);
+            videogames.length === 0? res.json({text: "There is no game with that name"}) : res.send(videogames);
         } else {
             let videogames = [];
             const videogamesDb = await Videogame.findAll({

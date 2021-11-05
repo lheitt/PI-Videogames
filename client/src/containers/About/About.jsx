@@ -11,12 +11,12 @@ function About() {
                 <h2 className="about-title">Luciano Heitt</h2>
                 <h4 className="about-subtitle">Author</h4>
                 <div className="about-links">
-                    <a className="about-linked-in" href="https://www.linkedin.com/in/luciano-heitt/">
+                    <a className="about-linked-in" href="https://www.linkedin.com/in/luciano-heitt/" target="_blank" rel="noopener noreferrer">
                         LinkedIn
                         <br />
                         <img className="linked-in-logo" src="/static/media/linkedin-logo.png" alt="linkedin logo"/>
                     </a>
-                    <a className="about-github" href="https://github.com/lheitt">
+                    <a className="about-github" href="https://github.com/lheitt" target="_blank" rel="noopener noreferrer">
                         GitHub
                         <br />
                         <img className="github-logo" src="/static/media/github-logo.png" alt="github logo"/>

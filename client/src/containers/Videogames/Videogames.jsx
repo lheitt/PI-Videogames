@@ -23,7 +23,7 @@ function Videogames() {
 
     const indexOfLastVideogame = currentPage * videogamesPerPage;
     const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage;
-    const videogames = allVideogames.slice(indexOfFirstVideogame, indexOfLastVideogame);
+    const videogames = Array.isArray(allVideogames) ? allVideogames.slice(indexOfFirstVideogame, indexOfLastVideogame) : undefined;
 
     function paginate(pageNumber) {
         setCurrentPage(pageNumber);
@@ -39,6 +39,10 @@ function Videogames() {
             <Sort />
             <Filter />
             {   
+                allVideogames[0] === "No games" ?
+                <h1 className="videogames-loading">There is no games with that filter &#128579;</h1> :
+                allVideogames.text === "There is no game with that name" ? 
+                <h1 className="videogames-loading">There is no game with that name</h1> :
                 allVideogames.length === 0 ?
                 <div className="videogames-loading">
                     <h1 className="videogames-loading">Loading...</h1>
