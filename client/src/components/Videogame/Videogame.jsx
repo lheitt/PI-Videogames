@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./Videogame.css";
 
-function Videogame({id, name, image, genres}) {
+function Videogame({id, name, image, genres, rating}) {
     let key = 1;
     return (
         <div className="videogame-card">
@@ -17,6 +17,7 @@ function Videogame({id, name, image, genres}) {
                         )
                     }
                 </div>
+                <h6 className="videogame-rating">{rating} &#11088;</h6>
         </div>
     )
 }

@@ -42,7 +42,7 @@ function Videogames() {
                 allVideogames[0] === "No games" ?
                 <h1 className="videogames-loading">There is no games with that filter &#128579;</h1> :
                 allVideogames.text === "There is no game with that name" ? 
-                <h1 className="videogames-loading">There is no game with that name</h1> :
+                <h1 className="videogames-loading">There is no game with that name &#129488;</h1> :
                 allVideogames.length === 0 ?
                 <div className="videogames-loading">
                     <h1 className="videogames-loading">Loading...</h1>
@@ -58,6 +58,7 @@ function Videogames() {
                                     name={videogame.name} 
                                     image={videogame.image} 
                                     genres={videogame.genres}
+                                    rating={videogame.rating}
                                 /> 
                             })
                         }

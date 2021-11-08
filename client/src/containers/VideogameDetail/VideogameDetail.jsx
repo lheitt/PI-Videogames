@@ -38,7 +38,7 @@ function VideogameDetail() {
                     <h4>Platform/s:</h4>
                     {
                         videogameDetail.platforms.map((platform) => 
-                            <span key2={key2++}>{platform.platform ? platform.platform.name + " | " : platform + " | "}</span>
+                            <span key={key2++}>{platform.platform ? platform.platform.name + " | " : platform + " | "}</span>
                         )
                     }
                 </div> : 

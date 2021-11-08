@@ -74,11 +74,20 @@
 
 .add-videogame-button {
     font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Verdana';
     margin: 1rem;
+    border-radius: 2rem;
+    border-style: solid;
+    border-width: .2rem;
+    border-color: black;
+    transition: .3s ease-in-out;
 }
 
 .add-videogame-button:hover {
     cursor: pointer;
+    transform: scale(1.2);
+    background-color: #ffc107;
 }
 
 input {

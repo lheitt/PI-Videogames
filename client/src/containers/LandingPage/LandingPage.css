@@ -25,6 +25,7 @@ a {
 
 .loading-text {
     color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .spinner {
@@ -43,19 +44,25 @@ a {
 
 .press-start {
     font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Verdana';
     position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -20px;
     margin-left: -120px;
-    transition: .5s ease-in-out;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2rem;
+    border-style: solid;
+    border-width: .2rem;
+    border-color: black;
+    transition: .5s ease-in-out;
 }
 
 .press-start:hover {
+    cursor: pointer;
     transform: scale(1.4);
-    /* border-style: solid; */
-    /* border-color: #ffc107; */
+    background-color: #ffc107;
 }
   
 
