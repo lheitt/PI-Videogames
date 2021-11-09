@@ -187,4 +187,16 @@ router.post("/videogame", async (req, res, next) => {
     }
 });
 
+router.post("/genre", async (req, res, next) => {
+    try {
+        const name = req.body.name;
+        const newGenre = await Genre.create({
+            name
+        });
+        res.send(newGenre);
+    } catch(error) {
+        next(error)
+    }
+})
+
 module.exports = router;
