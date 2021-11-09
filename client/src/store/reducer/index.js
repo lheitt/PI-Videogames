@@ -70,7 +70,7 @@ function reducer(state = initialState, action) {
                 orderedVideogames = orderedVideogames.sort((a, b) => {
                     return a.rating - b.rating
                 })
-                if(action.payload === "9-1") orderedVideogames = orderedVideogames.reverse();
+                if(action.payload === "5-0") orderedVideogames = orderedVideogames.reverse();
             }
 
             return {
