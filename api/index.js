@@ -42,7 +42,7 @@ conn.sync({ force: false }).then(() => {
   //   apiAllGames = videogamesApi.next;
   // }
   // await Videogames.bulkCreate(videogames)
-  server.listen(3001, () => {
+  server.listen(process.env.PORT || 3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
