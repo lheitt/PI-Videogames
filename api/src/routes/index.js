@@ -199,4 +199,18 @@ router.post("/genre", async (req, res, next) => {
     }
 })
 
+router.delete("/videogames/:idVideogame", async (req, res, next) => {
+    try {
+        const idVideogame = req.params.idVideogame;
+        await Videogame.destroy({
+            where: {
+                id: idVideogame
+            }
+        })
+        res.json({text: "Videogame successfully deleted"})
+    } catch(error) {
+        next(error)
+    }
+})
+
 module.exports = router;

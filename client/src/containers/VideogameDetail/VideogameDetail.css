@@ -12,6 +12,23 @@
     text-shadow: 2px 2px 4px #000000;
 }
 
+.videogame-delete-button {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Verdana';
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    position: absolute;
+    left: 90%;
+}
+
+.videogame-delete-button:hover {
+    cursor: pointer;
+    color: #ffc107;
+}
+
 .videogame-detail-title {
     padding-top: 2rem;
 }
@@ -58,9 +75,19 @@
     }
 }
 
+@media screen and (max-width: 950px) {
+    .videogame-delete-button {
+        left: 85%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .videogame-description {
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+
+    .videogame-delete-button {
+        left: 75%;
     }
 }

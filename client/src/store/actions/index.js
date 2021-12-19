@@ -116,3 +116,12 @@ export function postVideogame(newVideogame) {
         })
     }
 };
+
+export function deleteVideogame(id) {
+    return function() {
+        axios.delete(`/videogames/${id}`)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+}
